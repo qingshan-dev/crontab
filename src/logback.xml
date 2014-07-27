@@ -1,0 +1,31 @@
+<configuration scan="false" scanPeriod="900" debug="false">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+<!-- 			<Pattern>>%d{yyyy-MM-dd HH:mm:ss.SSS,GMT+8} %-5level %replace(%caller{1}){'Caller\+\d+\s+at','-'} - %msg %n</Pattern>  -->
+			<Pattern>>%d{yyyy-MM-dd HH:mm:ss.SSS,GMT+8} %-5level - %msg %n</Pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 输出日志类精细控制 -->
+	<logger name="info.qingshan" level="DEBUG" />
+	<logger name="org.quartz" level="WARN" />
+	
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/crontab.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/crontab-.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<Pattern>>%d{yyyy-MM-dd HH:mm:ss.SSS,GMT+8} %-5level - %msg %n</Pattern>
+		</encoder>
+	</appender>
+	<!-- 控制日志输入方向-->
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+	
+</configuration> 

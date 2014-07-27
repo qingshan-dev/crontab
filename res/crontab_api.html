@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+	</head>
+	<body>
+		<style type="text/css">
+			body {
+				font-family: Helvetica, 'microsoft yahei', Arial, sans-serif;
+				font-size: 14px;
+			}
+			#container {
+				width: 960px;
+				margin: 20px auto;
+			}
+			td, th {
+				border: solid 1px #CCC;
+				height: 30px;
+				line-height: 20px;
+				padding: 0 6px 0 10px;
+				border: 1px solid #dddddd;
+				line-height: 28px;
+				background-color: #f8f8f8;
+			}
+			td p {
+				margin: 0px;
+				padding: 0px;
+			}
+			tr>td:first-child{
+				font-size: 20px;
+			}
+			tr>td:last-child,tr>th:last-child{
+				text-align: center;
+				width: 32px;
+			}
+			th {
+				height: 10px;
+			}
+			table {
+				border-collapse: collapse;
+				color: #060;
+				font-size: 14px;
+				line-height: 1.6;
+				color: #333;
+				width: 920px;
+			}
+
+		</style>
+		<div id="container">
+			<table style="">
+				<tr>
+					<th colspan="2">参数名称</th>
+					<th>类型</th>
+					<th>参数含义</th>
+					<th>值</th>
+					<th>必须</th>
+				</tr>
+				<tr>
+					<td colspan="2">shell</td>
+					<td>[ ]</td>
+					<td>执行命令或调用sh/bat</td>
+					<td>
+					<p>
+						里面0+个对象
+					</p>
+					<p>
+						注意:对象中3个属性必须同时存在
+					</p></td>
+					<td>否</td>
+				</tr>
+				<tr>
+					<td width="24"></td>
+					<td>type</td>
+					<td>string</td>
+					<td>执行命令方式</td>
+					<td>
+					<p>
+						1.cmd: 执行一条命令，无法正常重定向输出流到文件（比如不能："cmd /c dir > result.txt")
+					</p>
+					<p>
+						2.cmd_args：可使用一条参数化, 并可以常重定向输出流到文件（比如能：["cmd", "/c", "dir >", "result.txt"]或"cmd /c dir")
+					</p></td>
+					<td>是</td>
+				</tr>
+				<tr>
+					<td width="24"></td>
+					<td>cmd</td>
+					<td>string(cmd)或[ ](cmd_args)</td>
+					<td>执行命令目标</td>
+					<td>
+					<p>
+						1.命令行`cmd /c dir`或 shell `rm -rf /tmp/log/custom/*`
+					</p>
+					<p>
+						2.`/tmp/custom.bat` 或 `/tmp/custom.sh`
+					</p></td>
+					<td>是</td>
+				</tr>
+				<tr>
+					<td width="24"></td>
+					<td>cron</td>
+					<td>string</td>
+					<td>quartz cron表达式</td>
+					<td>
+					<p>
+						<a href="http://www.baidu.com/s?wd=quartz%20cron%E8%A1%A8%E8%BE%BE%E5%BC%8F&rsv_spt=1&issp=1&rsv_bp=0&ie=utf-8&tn=baiduhome_pg&rsv_sug3=15&rsv_sug4=1677&rsv_sug1=17&oq=quartz%20cron&rsv_sug2=0&f=3&rsp=1&inputT=8163">
+							quartz cron表达式
+						</a>
+					</p></td>
+					<td>是</td>
+				</tr>
+				<tr>
+					<td colspan="2">capture</td>
+					<td>[ ]</td>
+					<td>定时截图配置</td>
+					<td>
+					<p>
+						里面0+个对象
+					</p>
+					<p>
+						注意:对象中3个属性必须同时存在
+					</p></td>
+					<td>否</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>dir</td>
+					<td>string</td>
+					<td>执行命令方式</td>
+					<td>
+					<p>
+						截图存放目录
+					</p></td>
+					<td>是</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>photoSuffix</td>
+					<td>string</td>
+					<td>图像保存后缀</td>
+					<td>
+						只支持: bmp/jpg/jpeg/png, 建议使用: png
+					</td>
+					<td>是</td>
+				</tr>
+				<tr>
+					<td width="24"></td>
+					<td>cron</td>
+					<td>string</td>
+					<td>quartz cron表达式</td>
+					<td>
+					<p>
+						<a href="http://www.baidu.com/s?wd=quartz%20cron%E8%A1%A8%E8%BE%BE%E5%BC%8F&rsv_spt=1&issp=1&rsv_bp=0&ie=utf-8&tn=baiduhome_pg&rsv_sug3=15&rsv_sug4=1677&rsv_sug1=17&oq=quartz%20cron&rsv_sug2=0&f=3&rsp=1&inputT=8163">
+							quartz cron表达式
+						</a>
+					</p></td>
+					<td>是</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

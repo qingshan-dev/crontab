@@ -1,0 +1,26 @@
+{
+    "shell": [
+        {
+        	"type": "cmd",
+            "cmd": "B:/project/crontab/test/dir.bat", 
+            "cron": "0 21 0 * * ?"
+        },
+        {
+        	"type": "cmd_args",
+            "cmd": ["cmd", "/c", "dir >", "result.txt"], 
+            "cron": "0 21 0 * * ?"
+        }
+    ], 
+    "capture": [
+	    {
+	        "dir": "D:/tmp/", 
+	        "photoSuffix":"jpg",
+	        "cron": "0 0/2 * * * ?"
+	    },
+	    {
+	        "dir": "D:/tmp/", 
+	        "photoSuffix":"png",
+	        "cron": "0 0/2 * * * ?"
+	    }
+    ]
+}
